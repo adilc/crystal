@@ -33,7 +33,7 @@ spec:
         app: crystal
     spec:
       containers:
-      - image: adilcan/crystal:latest
+      - image: CONTAINER_IMAGE
         imagePullPolicy: Always
         name: crystal
         ports:
