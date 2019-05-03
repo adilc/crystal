@@ -8,7 +8,7 @@ log.debug("Created logger")
 log.info("Program started")
 log.warn("Nothing to do!")
 
-code_hash = File.read("code_hash.txt")
+
 ip = ENV["IP"]
 az = ENV["AZ"]
 log.debug("code_hash is: #{code_hash}")
@@ -25,7 +25,7 @@ server = HTTP::Server.new(
     ]) do |context|
       if context.request.path == "/crystal" || context.request.path == "/crystal/"
         context.response.content_type = "text/plain"
-        context.response.print "Crystal Shards Backend: Running on #{az_message} commit #{code_hash}"
+        context.response.print "Crystal Shards Backend: Running on #{az_message}"
       elsif context.request.path == "/health"
         context.response.content_type = "text/plain"
         context.response.print "Healthy!"
